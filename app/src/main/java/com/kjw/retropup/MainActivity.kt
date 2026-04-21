@@ -57,7 +57,7 @@ fun DogScreen() {
             // 코루틴 스코프를 열어 백그라운드 환경에서 안전하게 통신 시작
             coroutineScope.launch {
                 try {
-                    val response = RetrofitClient.retrofit.getRandomDog()
+                    val response = RetrofitClient.dogApi.getRandomDog()
                     dogImageUrl = response.imageUrl
                     Log.d("RetroPup", "통신 성공: ${response.imageUrl}")
                 } catch (e: Exception) {
